@@ -250,7 +250,7 @@ struct Config {
 
     timezone_param = "Los_Angeles";
 
-    enable_monitor_and_re_enable_autoping = 0;  // keeps task_autoping running
+    enable_monitor_and_re_enable_autoping = 1;  // keeps task_autoping running
     enable_re_enable_autoping_once_a_day = 0;   // set enable_autoping = 1 at 01:00 each day
     enable_monitor_ssh = 1;                     // keeps task_monitor_ssh running
     enable_monitor_modem = 1;                   // keeps MOSFET_1 on
@@ -332,7 +332,6 @@ int prev_mosfet_2 = -1;
 int prev_mosfet_3 = -1;
 int prev_mosfet_4 = -1;
 
-// NOT FLASHED
 int prev_enable_monitor_and_re_enable_autoping = -1;
 int prev_enable_re_enable_autoping_once_a_day = -1;
 int prev_enable_monitor_ssh = -1;
@@ -1998,6 +1997,10 @@ void handleConfig() {
   html += "<label>Time Allowance (s)</label><input type='number' name='time_allowance' value='" + String(config.time_allowance_param / 1000) + "'>";
   html += "<label>Max Reboot Wait (s)</label><input type='number' name='max_reboot_wait' value='" + String(config.max_reboot_wait_param / 1000) + "'>";
   html += "<label>Wait Divisor (s)</label><input type='number' name='wait_divisor' value='" + String(config.wait_divisor_param / 1000) + "'>";
+
+  html += "<label>Enable Monitor And Re-Enable Autoping</label><input type='number' name='enable_monitor_and_re_enable_autoping' value='" + String(config.enable_monitor_and_re_enable_autoping) + "'>";
+
+  html += "<label>Enable Re-Enable Autoping Once A Day</label><input type='number' name='enable_re_enable_autoping_once_a_day' value='" + String(config.enable_re_enable_autoping_once_a_day) + "'>";
 
   // html += "<label>Enable Monitor SSH</label><input type='checkbox' name='enable_monitor_ssh' ";
   // html += (config.enable_monitor_ssh ? "checked" : "");
