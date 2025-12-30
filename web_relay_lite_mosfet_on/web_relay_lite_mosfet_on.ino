@@ -221,9 +221,9 @@ struct Config {
     username_param = "admin";
     password_param = "CAV2007$!smart";
 
-    ethIP_param = IPAddress(192, 168, 66, 150);
+    ethIP_param = IPAddress(192, 168, 2, 150);
     vsignIP_param = IPAddress(192, 168, 2, 100);
-    gateway_param = IPAddress(192, 168, 66, 1);
+    gateway_param = IPAddress(192, 168, 2, 50);
     subnet_param = IPAddress(255, 255, 255, 0);
     primaryDNS_param = IPAddress(8, 8, 8, 8);
     secondaryDNS_param = IPAddress(1, 1, 1, 1);
