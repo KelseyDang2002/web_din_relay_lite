@@ -719,15 +719,9 @@ void loop() {
       if (xSemaphoreTake(spiffsMutex, pdMS_TO_TICKS(5000))) {
         String filename = "/" + config.siteID_param + "-" + getDate() + ".txt";
         // readLogFile(filename);
-        readLogFile("/site000-2025-12-14.txt");
-        readLogFile("/site000-2025-12-15.txt");
-        readLogFile("/site000-2025-12-16.txt");
-        readLogFile("/site000-2025-12-17.txt");
-        readLogFile("/site000-2025-12-18.txt");
-        readLogFile("/site000-2025-12-19.txt");
-        readLogFile("/site000-2025-12-20.txt");
-        readLogFile("/site000-2025-12-21.txt");
-        readLogFile("/site000-2025-12-22.txt");
+        readLogFile("/site000-2025-12-29.txt");
+        readLogFile("/site000-2025-12-30.txt");
+        readLogFile("/site000-2025-12-31.txt");
         xSemaphoreGive(spiffsMutex);
       }
     } else if (cmd == 'l') {
@@ -2906,7 +2900,7 @@ void handleRecovery() {
     systemLog("Recovery failed!");
     reboot_modem();
     vTaskDelay(pdMS_TO_TICKS(config.autoping_reboot_delay_param));
-    inRecovery = false;  // reset to normal after delay
+    // inRecovery = false;
     // ESP.restart(); // reboot Web DIN Relay Lite
   }
 }
